@@ -1,17 +1,100 @@
-create table EMPLOYEE
-(
-    ID       integer
-        constraint EMPLOYEE_pk
-            primary key autoincrement
-        references EMPLOYEE,
-    NAME     VARCHAR,
-    SALARY   integer,
-    DEP_ID   integer
-        references DEPARTMENT,
-    CHIEF_ID integer
-);
-
-INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (1, 'Баранов Петр Евгеньевич', 150000, 2, null);
-INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (2, 'Абрамова Карина Анатольевна', 60000, 2, 1);
-INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (3, 'Колесов С.П.', 140000, 1, null);
-INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (4, 'Колесов С.П.', 140000, 1, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (1, 'Баранов Петр Евгеньевич', 150000, 1, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (2, 'Абрамова Карина Анатольевна', 180000, 2, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (3, 'Ахметова Юлия Валерьевна', 150000, 3, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (4, 'Казанцева Анастасия Евгеньевна', 160000, 4, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (5, 'Игнатов Алексей Викторович', 320000, 5, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (6, 'Шамохин Виктор Валентинович', 180000, 6, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (7, 'Корольков Алексей Николаевич', 190000, 7, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (8, 'Городецкий Антон Сергеевич', 210000, 8, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (9, 'Петров Игорь Александрович', 180000, 9, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (10, 'Станиславский Иван Перфильевич', 190000, 10, null);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (11, 'Ефимов Артур Вениаминович', 90000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (12, 'Горбунов Юстин Дмитриевич', 100000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (13, 'Матвеев Пантелеймон Рубенович', 80000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (14, 'Кошелев Авраам Александрович', 70000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (15, 'Носова Лия Созоновна', 80000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (16, 'Титова Евдокия Петровна', 90000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (17, 'Титова Береслава Созоновна', 110000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (18, 'Рожкова Генриетта Анатольевна', 60000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (19, 'Тимофеева Северина Мэлоровна', 65000, 1, 1);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (20, 'Ковалёва Нонна Германовна', 90000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (21, 'Кононова Ариадна Николаевна', 110000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (22, 'Сафонова Альвина Георгиевна', 90000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (23, 'Кудрявцева Нелли Дмитриевна', 75000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (24, 'Кондратьева Мариша Евсеевна', 65000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (25, 'Титова Екатерина Владимировна', 90000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (26, 'Казаков Рубен Пётрович', 100000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (27, 'Калашников Лев Христофорович', 65000, 2, 2);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (28, 'Воронцов Даниил Демьянович', 90000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (29, 'Прохоров Панкрат Тимофеевич', 110000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (30, 'Крылов Мечеслав Мартынович', 80000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (31, 'Орехов Анатолий Макарович', 85000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (32, 'Пахомов Иосиф Геннадьевич', 110000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (33, 'Рогов Модест Георгьевич', 95000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (34, 'Сафонов Любовь Макарович', 80000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (35, 'Фомин Ибрагил Авксентьевич', 90000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (36, 'Киселёва Малика Тарасовна', 85000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (37, 'Козлова Ева Матвеевна', 80000, 3, 3);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (38, 'Пондякова Валерия Якововна', 90000, 4, 4);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (39, 'Жаворонкова Эмилия Ираклиевна', 70000, 4, 4);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (40, 'Жаворонков Тимофей Олегович', 65000, 4, 4);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (41, 'Непеин Афанасий Ульянович', 65000, 4, 4);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (42, 'Гольдина Дина Захаровна', 250000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (43, 'Мадулин Анатолий Мечиславович', 240000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (44, 'Живенков Тимур Вадимович', 265000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (45, 'Аксёнова Эльвира Георгиевна', 285000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (46, 'Яковиченко Рената Серафимовна', 270000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (47, 'Кочнев Всеслав Платонович', 230000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (48, 'Борцова Яна Ипполитовна', 235000, 5, 5);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (49, 'Краснопёров Роман Саввевич', 150000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (50, 'Эзерин Ипполит Ипатиевич', 90000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (51, 'Аникина Светлана Елизаровна', 120000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (52, 'Титова Дарья Ивановна', 130000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (53, 'Характерова Таисия Потаповна', 100000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (54, 'Голубкина Жанна Михеевна', 80000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (55, 'Коржаева Фаина Ильевна', 115000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (56, 'Плеханова Алиса Виталиевна', 120000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (57, 'Беляков Валерий Адрианович', 135000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (58, 'Булыгина Екатерина Федотовна', 85000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (59, 'Беляков Адриан Эрнестович', 95000, 6, 6);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (60, 'Петров Василий Юрьевич', 150000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (61, 'Коржаева Роза Тихоновна', 120000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (62, 'Бородина Раиса Николаевна', 130000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (63, 'Черных Жасмина Емельяновна', 145000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (64, 'Севастьянов Алексей Олегович', 160000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (65, 'Маркелов Тигран Герасимович', 120000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (66, 'Грибков Владилен Савельевич', 100000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (67, 'Игнатьева Ксения Арсеновна', 135000, 7, 7);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (68, 'Игнатов Андрей Вячеславович', 160000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (69, 'Кулакова Елена Адамовна', 140000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (70, 'Комягина Яна Федоровна', 130000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (71, 'Седов Степан Викторович', 135000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (72, 'Судаков Тихон Викторович', 150000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (73, 'Гончарова София Артёмовна', 120000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (74, 'Лебедев Максим Иванович', 110000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (75, 'Семенова Елена Данииловна', 140000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (76, 'Карпова Полина Александровна', 135000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (77, 'Кузнецов Дмитрий Артёмович', 125000, 8, 8);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (78, 'Голованова Ева Ярославовна', 150000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (79, 'Окулова Александра Ивановна', 120000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (80, 'Емельянова Александра Анатольевна', 110000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (81, 'Горшков Михаил Тимофеевич', 135000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (82, 'Кравцов Олег Васильевич', 145000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (83, 'Тихонов Илья Тихонович', 120000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (84, 'Владимиров Глеб Викторович', 110000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (85, 'Дмитриев Эмир Миронович', 145000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (86, 'Литвинов Егор Арсентьевич', 135000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (87, 'Кудряшов Савва Александрович', 110000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (88, 'Третьякова Екатерина Алексеевна', 90000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (89, 'Носова Анна Кирилловна', 100000, 9, 9);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (90, 'Тихонов Александр Дмитриевич', 145000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (91, 'Носова Людмила Ивановна', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (92, 'Агеева Яна Данииловна', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (93, 'Гусева Дарина Тимофеевна', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (94, 'Казаков Александр Андреевич', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (95, 'Смирнов Алексей Николаевич', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (96, 'Киселев Андрей Георгиевич', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (97, 'Жданов Даниил Александрович', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (98, 'Рябова Мелания Егоровна', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (99, 'Попова Екатерина Серафимовна', 100000, 10, 10);
+INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEP_ID, CHIEF_ID) VALUES (100, 'Головина София Матвеевна', 100000, 10, 10);
