@@ -12,3 +12,22 @@ FROm DEPARTMENT INNER JOIN
       having count(*) > 1) as surnames
 ON DEPARTMENT.ID = surnames.DEP_ID
 
+3. SELECT left_emp.NAME, left_emp.SALARY, right_emp.NAME, right_emp.SALARY
+    FROM (
+        SELECT EMPLOYEE.ID as left_emp_id, MIN(e.id) as right_emp_id
+        FROM EMPLOYEE
+        join EMPLOYEE as e on EMPLOYEE.DEP_ID = e.DEP_ID
+        join (
+            SELECT EMPLOYEE.ID, MIN(e.SALARY) as closest_sal
+            FROM EMPLOYEE join EMPLOYEE as e
+            WHERE EMPLOYEE.SALARY < e.SALARY and EMPLOYEE.DEP_ID = e.DEP_ID
+            GROUP BY EMPLOYEE.ID
+        ) as temp on EMPLOYEE.ID = temp.ID
+        WHERE temp.closest_sal = e.SALARY
+        GROUP BY EMPLOYEE.ID
+        ) as final_table
+    JOIN EMPLOYEE as left_emp ON left_emp.ID = final_table.left_emp_id
+    JOIN EMPLOYEE as right_emp ON right_emp.ID = final_table.right_emp_id
+    ORDER BY left_emp.NAME
+
+
