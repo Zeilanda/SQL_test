@@ -30,4 +30,61 @@ ON DEPARTMENT.ID = surnames.DEP_ID
     JOIN EMPLOYEE as right_emp ON right_emp.ID = final_table.right_emp_id
     ORDER BY left_emp.NAME
 
+4. SELECT department,
+       summ_salary,
+       SUM(summ_salary) OVER (order by summ_salary) as total
+FROM (SELECT DEPARTMENT.NAME as department, SUM(EMPLOYEE.SALARY) as summ_salary
+    FROM DEPARTMENT JOIN EMPLOYEE ON DEPARTMENT.ID = EMPLOYEE.DEP_ID
+    GROUP BY DEPARTMENT.NAME) as temp_table
+ORDER BY summ_salary
+
+
+5. INSERT INTO EMPLOYEE (NAME, SALARY, DEP_ID)
+SELECT '<ФИО>', sub_salary, sub_dep_id
+FROM (
+    SELECT max_avg_salary * (employee_amount + 1) - sum_salary as sub_salary, dep_id as sub_dep_id,
+           employee_amount, avg_salary, sum_salary, max_avg_salary
+    FROM (
+            SELECT MAX(avg_salary) as max_avg_salary
+            FROM (
+                SELECT ROUND(AVG(E.SALARY), 2) as avg_salary
+                FROM DEPARTMENT JOIN EMPLOYEE E on DEPARTMENT.ID = E.DEP_ID
+                GROUP BY DEPARTMENT.NAME
+            ) as temp_table
+        ) as max_table
+    JOIN (
+          SELECT COUNT(E.DEP_ID) as employee_amount, ROUND(AVG(E.SALARY), 2) as avg_salary,
+                 SUM(E.SALARY) as sum_salary, E.DEP_ID as dep_id
+          FROM DEPARTMENT JOIN EMPLOYEE E on DEPARTMENT.ID = E.DEP_ID
+          GROUP BY DEPARTMENT.NAME
+        ) as max_avg_salary
+    ) as sub;
+
+
+
+6. DELETE FROM EMPLOYEE
+WHERE EMPLOYEE.ID NOT IN (
+    SELECT MIN(ID)
+        FROM EMPLOYEE
+            JOIN (
+                SELECT NAME, count(*)
+                    FROM EMPLOYEE
+                    GROUP BY NAME, CHIEF_ID, SALARY, DEP_ID
+                    HAVING COUNT(*) > 1
+                ) as temp_table
+            ON EMPLOYEE.name = temp_table.NAME
+        GROUP BY EMPLOYEE.NAME
+    )
+AND EMPLOYEE.NAME IN (
+    SELECT EMPLOYEE.NAME
+        FROM EMPLOYEE
+            JOIN (
+                SELECT NAME, count(*)
+                    FROM EMPLOYEE
+                    GROUP BY NAME, CHIEF_ID, SALARY, DEP_ID
+                    HAVING COUNT(*) > 1
+                ) as temp_table
+            ON EMPLOYEE.name = temp_table.NAME
+        GROUP BY EMPLOYEE.NAME
+    );
 
